@@ -16,6 +16,10 @@ export default function Sound({
   rainSound.loop = true;
   coffeeShopSound.loop = true;
   fireplaceSound.loop = true;
+  forestSound.volume = .5;
+  rainSound.volume = .5;
+  coffeeShopSound.volume = .5;
+  fireplaceSound.volume = .5;
 
   function onOffForestSound(elementId) {
 
@@ -77,12 +81,43 @@ export default function Sound({
 
   }
 
+  function changeVolume(id, value) {
+
+    if (id == 'forestVolume') {
+      forestSound.volume = value / 10;
+      console.log(forestSound)
+      console.log(forestSound.volume)
+    }
+
+    if (id == 'rainVolume') {
+      rainSound.volume = value / 10;
+      console.log()
+    }
+
+    if (id == 'coffeeShopVolume') {
+      coffeeShopSound.volume = value / 10;
+      console.log()
+    }
+
+    if (id == 'fireplaceVolume') {
+      fireplaceSound.volume = value / 10;
+      console.log()
+    }
+
+    // forestSound.volume = 1;
+    // rainSound.volume = 1;
+    // coffeeShopSound.volume = 1;
+    // fireplaceSound.volume = 1;
+
+  }
+
   return {
     onOffForestSound,
     onOffRainSound,
     onOffCoffeeShopSound,
     onOffFireplaceSound,
     finishSound,
-    pauseAllSounds
+    pauseAllSounds,
+    changeVolume
   }
 }
