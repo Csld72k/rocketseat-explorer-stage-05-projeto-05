@@ -15,6 +15,10 @@ const buttonAdd = document.querySelector('.add');
 const buttonReduce = document.querySelector('.reduce');
 const buttonLightMode = document.querySelector('.light-mode');
 const buttonDarkMode = document.querySelector('.dark-mode');
+const forestInputRange = document.querySelector('#forestVolume');
+const rainInputRange = document.querySelector('#rainVolume');
+const coffeeShopInputRange = document.querySelector('#coffeeShopVolume');
+const fireplaceInputRange = document.querySelector('#fireplaceVolume');
 
 export const Elements = {
   secondsDisplay,
@@ -33,5 +37,9 @@ export const Elements = {
   buttonAdd,
   buttonReduce,
   buttonLightMode,
-  buttonDarkMode
+  buttonDarkMode,
+  forestInputRange,
+  rainInputRange,
+  coffeeShopInputRange,
+  fireplaceInputRange
 }
