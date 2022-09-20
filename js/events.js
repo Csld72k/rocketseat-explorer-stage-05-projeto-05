@@ -13,7 +13,11 @@ const {
   buttonAdd,
   buttonReduce,
   buttonLightMode,
-  buttonDarkMode
+  buttonDarkMode,
+  forestInputRange,
+  rainInputRange,
+  coffeeShopInputRange,
+  fireplaceInputRange
 } = Elements
 
 export default function Events({ controls, timer, sound }) {
@@ -96,6 +100,12 @@ export default function Events({ controls, timer, sound }) {
 
   }
 
+  function soundVolume(event) {
+    let eventId = event.target.id;
+    let eventValue = event.target.value;
+    sound.changeVolume(eventId, eventValue);
+  }
+
   buttonPlay.addEventListener('click', play);
   buttonPause.addEventListener('click', pause);
   buttonStop.addEventListener('click', stop);
@@ -107,6 +117,9 @@ export default function Events({ controls, timer, sound }) {
   buttonFireplace.addEventListener('click', fireplace);
   buttonLightMode.addEventListener('click', toggleLightAndDarkMode);
   buttonDarkMode.addEventListener('click', toggleLightAndDarkMode);
-
+  forestInputRange.addEventListener('input', soundVolume)
+  rainInputRange.addEventListener('input', soundVolume)
+  coffeeShopInputRange.addEventListener('input', soundVolume)
+  fireplaceInputRange.addEventListener('input', soundVolume)
 
 }
