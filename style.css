@@ -82,11 +82,19 @@ main {
   color: var(--primary-color);
 }
 
+.timer span {
+  transition: .2s;
+}
+
 .controls {
   width: 100%;
   padding: 0 2rem;
   display: flex;
   justify-content: space-between;
+}
+
+.controls button {
+  cursor: pointer;
 }
 
 .controls button svg {
@@ -124,6 +132,10 @@ main {
   place-content: center;
 }
 
+.sounds-wrapper svg {
+  cursor: pointer;
+}
+
 .card {
   width: 13.8rem;
   height: 15.2rem;
@@ -137,14 +149,14 @@ main {
   background-color: var(--card-bg-color);
 
   transition: background-color .2s;
-  cursor: pointer;
   z-index: 2;
 }
 
 .card button {
   position: absolute;
 
-  cursor: pointer;
+  margin-bottom: 3rem;
+
   z-index: -1;
 }
 
@@ -245,4 +257,87 @@ main {
     gap: 3.2rem;
   }
 
+}
+
+input[type=range] {
+  -webkit-appearance: none;
+  appearance: none;
+  display: inline-block;
+  width: 9rem;
+  height: 0.4rem;
+  border-radius: .5rem;
+  margin-top: 3.2rem;
+  background-color: var(--primary-color);
+  outline: none;
+  position: absolute;
+  bottom: 3rem;
+  z-index: 50;
+  transition: background-color .2s;
+}
+
+/* para o Fire Fox */
+input[type=range]::-moz-range-thumb {
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+  background: var(--primary-color);
+  border: none;
+  transition: background-color .2s;
+}
+
+/* para browsers da MS */
+input[type=range]::-ms-range-thumb {
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+  background: var(--primary-color);
+  border: none;
+  transition: background-color .2s;
+}
+
+input[type=range]::-webkit-slider-thumb {
+
+  /* limpa os estilos iniciais */
+  -webkit-appearance: none;
+  /* remove a aparencia padão */
+  border: none;
+
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+  background: var(--primary-color);
+  transition: background-color .2s;
+}
+
+input[type=checkbox]:checked+div>button input[type=range] {
+  background-color: #fff;
+}
+
+input[type=checkbox]:checked+div>button input[type=range]::-moz-range-thumb {
+  background-color: #fff;
+}
+
+input[type=checkbox]:checked+div>button input[type=range]::-ms-range-thumb {
+  background-color: #fff;
+}
+
+input[type=checkbox]:checked+div>button input[type=range]::-webkit-slider-thumb {
+  background-color: #fff;
+}
+
+.card:hover input[type=range] {
+  background-color: var(--bg-color);
+}
+
+.card:hover input[type=range]::-moz-range-thumb {
+  background-color: var(--bg-color);
+}
+
+.card:hover input[type=range]::-ms-range-thumb {
+  background-color: var(--bg-color);
+}
+
+.card:hover input[type=range]::-webkit-slider-thumb {
+
+  background-color: var(--bg-color);
 }
